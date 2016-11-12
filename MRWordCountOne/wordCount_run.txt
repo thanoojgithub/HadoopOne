@@ -141,3 +141,27 @@ good	2
 i	2
 you	2
 thanooj@ubuntu:~$
+
+
+
+
+
+
+Note:
+A Combiner, also known as a semi-reducer, is an optional class that operates by accepting the inputs from the Map class and thereafter passing the output key-value pairs to the Reducer class.
+The main function of a Combiner is to summarize the map output records with the same key. The output (key-value collection) of the combiner will be sent over the network to the actual Reducer task as input.
+
+Combiner
+The Combiner class is used in between the Map class and the Reduce class to reduce the volume of data transfer between Map and Reduce. Usually, the output of the map task is large and the data transferred to the reduce task is high.
+
+How Combiner Works?
+Here is a brief summary on how MapReduce Combiner works −
+
+A combiner does not have a predefined interface and it must implement the Reducer interface’s reduce() method.
+A combiner operates on each map output key. It must have the same output key-value types as the Reducer class.
+A combiner can produce summary information from a large dataset because it replaces the original Map output.
+As combiner can run muliple times on top of Map's output and out of the combiners are random,
+we can apply combiner only when, nature of the problem valid for commutation and association 
+a+b=b+a     and a+(b+c) = (a+b)+c
+
+
